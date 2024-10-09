@@ -1,12 +1,12 @@
 #include "push_swap.h"
 
-int  pop(t_stack *stack)
+long  pop(t_stack *stack)
 {
   int value;
   t_list  *node;
 
   if (is_empty(stack))
-    return ;
+    return (-2147483649);
   node = stack->top;
   value = node->content;
   stack->top = node->next;

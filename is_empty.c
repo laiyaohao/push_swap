@@ -2,5 +2,5 @@
 
 int is_empty(t_stack *stack)
 {
-  return (stack->top == NULL);
+	return (stack->top == NULL);
 }
