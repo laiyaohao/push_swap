@@ -1,10 +1,12 @@
 #include "push_swap.h"
 
-void	push(t_stack *stack, int num)
+void	push(t_stack *stack, void *num)
 {
 	t_list	*node;
 
 	node = ft_lstnew(num);
-	ft_lstadd_front(&stack, node);
-	stack->top = node;
+	if (stack->top == NULL)
+		stack->top = node;
+	else
+		ft_lstadd_front(&(stack->top), node);
 }

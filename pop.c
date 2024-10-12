@@ -1,15 +1,15 @@
 #include "push_swap.h"
 
-long  pop(t_stack *stack)
+void  *pop(t_stack *stack)
 {
-  int value;
+  void    *value;
   t_list  *node;
 
   if (is_empty(stack))
-    return (-2147483649);
+    return (NULL);
   node = stack->top;
   value = node->content;
   stack->top = node->next;
-  ft_lstdelone(node, free);
+  ft_lstdelone(node, del_con);
   return (value);
 }

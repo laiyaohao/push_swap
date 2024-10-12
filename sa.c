@@ -2,16 +2,15 @@
 
 void  sa(t_stack *stack_a)
 {
-  t_list  *og_top;
-  t_list  *new_top;
-  t_list  *next;
+  int og_top_con;
+  int new_top_con;
 
   if (is_empty(stack_a) || stack_a->top->next == NULL)
     return ;
-  og_top = stack_a->top;
+  og_top_con = *(int *)stack_a->top->content;
   pop(stack_a);
-  new_top = stack_a->top;
-  next = new_top->next;
-  og_top->next = next;
-  new_top->next = og_top;
+  new_top_con = *(int *)stack_a->top->content;
+  pop(stack_a);
+  push(stack_a, &og_top_con);
+  push(stack_a, &new_top_con);
 }

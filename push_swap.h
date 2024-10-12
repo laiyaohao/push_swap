@@ -34,8 +34,23 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 t_list	*ft_lstlast(t_list *lst);
 int		ft_printf(const char *str, ...);
 void	init_stack(t_stack *stack);
-void	push(t_stack *stack, int num);
+int is_int(char *str);
+void  free_stack(t_stack *stack);
+void	push(t_stack *stack, void *num);
 int		is_empty(t_stack *stack);
-long  pop(t_stack *stack);
+void	*pop(t_stack *stack);
+void	*peek(t_stack *stack);
+void  pa(t_stack *stack_a, t_stack *stack_b);
+void  pb(t_stack *stack_b, t_stack *stack_a);
+void  ra(t_stack *stack_a);
+void  rb(t_stack *stack_b);
+void  rr(t_stack *stack_a, t_stack *stack_b);
+void  rra(t_stack *stack_a);
+void  rrb(t_stack *stack_b);
+void  rrr(t_stack *stack_a, t_stack *stack_b);
+void  sa(t_stack *stack_a);
+void  sb(t_stack *stack_b);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+void  del_con(void *content);
 
 #endif
