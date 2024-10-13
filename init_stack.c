@@ -3,4 +3,5 @@
 void	init_stack(t_stack *stack)
 {
 	stack->top = NULL;
+	stack->size = 0;
 }

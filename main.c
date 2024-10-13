@@ -1,60 +1,76 @@
 #include "push_swap.h"
 #include <stdlib.h>
 #include <stdio.h>
-// int main(int argc, char **argv)
-// {
-// 	t_stack	stack_a;
-// 	int			i;
-// 	long		num;
-
-// 	if (argc < 2)
-// 		return (1);
-// 	init_stack(&stack_a);
-// 	i = 1;
-// 	while (i < argc)
-// 	{
-// 		num = ft_atol(argv[i]);
-// 		if (is_int(argv[i]) == 0 || num < -2147483648 || num > 2147483647)
-// 		{
-// 			free_stack(&stack_a);
-// 			ft_printf("Error\n");
-// 			return (0);
-// 		}
-// 		push(&stack_a, num);
-// 		i++;
-// 	}
-// 	int ans = peek(&stack_a);
-// 	return (0);
-// }
-
-int main(void)
+int main(int argc, char **argv)
 {
-	t_stack stack_a;
+	t_stack	stack_a;
+	t_stack	stack_b;
+	int	commas;
+	int	error;
+
+	commas = 0;
+	error = 0;
+	if (argc < 2 || (argc == 2 && argv[1][0] == '\0'))
+		return (1);
+	else if (argc == 2)
+	{
+		argv = ft_split(argv[1], ' ');
+		commas = 1;
+	}
 	init_stack(&stack_a);
-
-	int a = 3;
-	int b = 2;
-	int c = 1;
-	// int d = 5;
-
-	push(&stack_a, &a);
-	push(&stack_a, &b);
-	push(&stack_a, &c);
-
-	printf("Before pop, Top of Stack A: %d\n", *(int *)peek(&stack_a));
+	init_stack(&stack_b);
+	push_nums(&stack_a, argv, commas, &error);
+	if (!error)
+	{
+		// ft_printf("no error\n");
+		print_stack(&stack_a);
+	}
 	// pop(&stack_a);
-	// printf("after pop, Top of Stack A: %p\n", peek(&stack_a));
-	// push(&stack_a, &d);
-	// printf("after pushing, Top of Stack A: %d\n", *(int *)peek(&stack_a));
-
-	printf("\n\n");
-	rra(&stack_a);
-	printf("after rra, top of the stack: %d\n", *(int *)peek(&stack_a));
-	pop(&stack_a);
-	printf("after pop, Top of Stack A: %d\n", *(int *)peek(&stack_a));
-
+	// ft_printf("stack_a size: %d\n", stack_a.size);
 	free_stack(&stack_a);
+	free_stack(&stack_b);
+	if (commas)
+		free_argv(argv);
+	if (error)
+		ft_printf("Error\n");
+	return (0);
 }
+
+// int main(void)
+// {
+// 	t_stack stack_a;
+// 	t_stack	stack_b;
+// 	init_stack(&stack_a);
+// 	init_stack(&stack_b);
+
+// 	int aa = 3;
+// 	int ba = 2;
+// 	int cb = 1;
+// 	int db = 5;
+// 	aa = 6;
+
+// 	push(&stack_a, &aa);
+// 	push(&stack_a, &ba);
+// 	push(&stack_b, &cb);
+// 	push(&stack_b, &db);
+
+// 	// printf("before adding ele frm b, Top of Stack A: %d\n", *(int *)peek(&stack_a));
+// 	// printf("before pop top ele in b to a, top of b: %d\n", *(int *)peek(&stack_b));
+// 	// pop(&stack_a);
+// 	// printf("after pop, Top of Stack A: %d\n", *(int *)peek(&stack_a));
+// 	// push(&stack_a, &d);
+// 	// printf("after pushing, Top of Stack A: %d\n", *(int *)peek(&stack_a));
+// 	// pa(&stack_a, &stack_b);
+// 	// printf("\n\n");
+// 	// rra(&stack_a);
+// 	// printf("after pa, top of the stack a: %d\n", *(int *)peek(&stack_a));
+// 	// pop(&stack_a);
+// 	// printf("after pa, Top of Stack b: %d\n", *(int *)peek(&stack_b));
+// 	print_stack(&stack_a);
+
+// 	free_stack(&stack_a);
+// 	free_stack(&stack_b);
+// }
 
 // int main(int argc, char **argv)
 // {

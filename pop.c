@@ -11,5 +11,6 @@ void  *pop(t_stack *stack)
   value = node->content;
   stack->top = node->next;
   ft_lstdelone(node, del_con);
+  stack->size--;
   return (value);
 }
