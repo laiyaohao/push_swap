@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 	if (!error)
 	{
 		// ft_printf("no error\n");
+		sort_stack(&stack_a, &stack_b);
 		print_stack(&stack_a);
 	}
 	// pop(&stack_a);
