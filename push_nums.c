@@ -19,7 +19,9 @@ void	push_nums(t_stack *stack_a, char **argv, int commas, int *err)
 	while (argv[i])
 	{
 		// ft_printf("this is argv[%d]: %s\n", i, argv[i]);
-		num = malloc(sizeof(long));
+		num = (long *) malloc(sizeof(long));
+		if (num == NULL)
+			return ;
 		*num = ft_atol(argv[i]);
 		// ft_printf("this is num: %p\n", num);
 		if (is_int(argv[i]) == 0 || *num < -2147483648 || *num > 2147483647)
@@ -27,7 +29,7 @@ void	push_nums(t_stack *stack_a, char **argv, int commas, int *err)
 			*err = 1;
 			return ;
 		}
-		push(stack_a, num);
+		add_back(stack_a, num);
 		// ft_printf("i: %d\n", i);
 		i++;
 	}

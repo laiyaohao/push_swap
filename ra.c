@@ -4,17 +4,18 @@
  * Shift up all elements of stack a by 1.
 The first element becomes the last one.
  */
-void  ra(t_stack *stack_a)
+void  ra(t_stack *stack_a, int print)
 {
-	void		*top_con;
-	t_list	*top;
-	t_list	*last;
+	long		*top_con;
 
 	if (is_empty(stack_a) || stack_a->top->next == NULL)
 		return ;
-	top_con = stack_a->top->content;
-	last = ft_lstlast(stack_a->top);
+	top_con = (long *)malloc(sizeof(long));
+	if (top_con == NULL)
+		return ;
+	*top_con = *(long *)stack_a->top->content;
 	pop(stack_a);
-	top = ft_lstnew(top_con);
-	last->next = top;
+	add_back(stack_a, top_con);
+	if (print)
+		ft_printf("ra\n");
 }

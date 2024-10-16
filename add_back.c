@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	push(t_stack *stack, void *num)
+void	add_back(t_stack *stack, void *num)
 {
 	t_list	*node;
 
@@ -12,7 +12,7 @@ void	push(t_stack *stack, void *num)
 		// ft_printf("stack->top == nULL\n");
 	}
 	else
-		ft_lstadd_front(&(stack->top), node);
+		ft_lstadd_back(&(stack->top), node);
 
 	// ft_printf("\n\n");
 	// print_stack(stack);
