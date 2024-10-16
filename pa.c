@@ -12,4 +12,5 @@ void  pa(t_stack *stack_a, t_stack *stack_b)
 	*b_top = *(long *)stack_b->top->content;
 	pop(stack_b);
 	push(stack_a, b_top);
+	ft_printf("pa\n");
 }
