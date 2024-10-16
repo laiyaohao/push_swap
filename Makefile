@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/10/16 18:22:08 by ylai              #+#    #+#              #
+#    Updated: 2024/10/16 18:22:32 by ylai             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME := push_swap
 CC := cc
 CFLAGS := -Wall -Werror -Wextra
@@ -8,7 +20,8 @@ FT_PRINTF := ${FT_PRINTF_DIR}/libftprintf.a
 SRC_FILE_NAMES := main free_stack init_stack is_empty is_int pa pb peek \
 									pop add_back push ra rb rr rra rrb rrr sa sb ss del_con \
 									push_nums free_argv print_stack sort_stack sort_two \
-									sort_three sort_four
+									sort_three sort_four find_smallest push_small_to_b \
+									sort_five radix_sort
 SRCS := ${addsuffix .c, ${SRC_FILE_NAMES}}
 OBJS := ${SRCS:.c=.o}
 

@@ -1,28 +1,82 @@
 #include "push_swap.h"
 
-void radix_sort(t_stack *stackA, t_stack *stackB, int size) {
-	int max_bits = 0;
-	int max_num = size - 1;
+long	find_largest(t_stack *stack_a)
+{
+	t_list	*node;
+	long	largest;
 
-	// Find the number of bits needed to represent the largest number
-	while ((max_num >> max_bits) != 0)
+	largest = *(long *)stack_a->top->content;
+	node = stack_a->top;
+	while (node != NULL)
+	{
+		if (*(long *)node->content > largest)
+			largest = *(long *)node->content;
+		node = node->next;
+	}
+	return (largest);
+}
+
+int	find_max_bit(long max_num)
+{
+	int	max_bits;
+
+	max_bits = 0;
+	while ((max_num >> max_bits))
 		max_bits++;
+	return (max_bits);
+}
 
-	for (int i = 0; i < max_bits; i++) {
-		for (int j = 0; j < size; j++) {
-			int num = stackA->items[stackA->top];
+void	radix_inner_sort(int max_bits, t_stack *stack_a, t_stack *stack_b)
+{
+	int	i;
+	t_list *node;
+
+	i = 0;
+	node = stack_a->top;
+	while (i < max_bits)
+	{
+		while (node != NULL)
+		{
+			long num = *(long *)node->content;
+			node = node->next;
 
 			// Check the i-th bit of the number
 			if (((num >> i) & 1) == 0) {
-				pb(stackB, stackA); // Push to stackB if the i-th bit is 0
+				pb(stack_b, stack_a); // Push to stackB if the i-th bit is 0
 			} else {
-				ra(stackA);  // Rotate if the i-th bit is 1
+				ra(stack_a, 1);  // Rotate if the i-th bit is 1
 			}
 		}
 
 		// Push all elements back from stackB to stackA
-		while (!is_empty(stackB)) {
-			pa(stackA, stackB);
+		while (!is_empty(stack_b)) {
+			pa(stack_a, stack_b);
 		}
+		i++;
 	}
+}
+
+void radix_sort(t_stack *stack_a, t_stack *stack_b)
+{
+	long max_num = find_largest(stack_a);
+	int max_bits = find_max_bit(max_num);
+
+	// for (int i = 0; i < max_bits; i++) {
+	// 	for (int j = 0; j < size; j++) {
+	// 		int num = stack_a->items[stack_a->top];
+
+	// 		// Check the i-th bit of the number
+	// 		if (((num >> i) & 1) == 0) {
+	// 			pb(stackB, stack_a); // Push to stackB if the i-th bit is 0
+	// 		} else {
+	// 			ra(stack_a);  // Rotate if the i-th bit is 1
+	// 		}
+	// 	}
+
+	// 	// Push all elements back from stackB to stackA
+	// 	while (!is_empty(stackB)) {
+	// 		pa(stack_a, stackB);
+	// 	}
+	// }
+	radix_inner_sort(max_bits, stack_a, stack_b);
 }
