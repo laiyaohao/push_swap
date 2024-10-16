@@ -23,9 +23,10 @@ void	push_nums(t_stack *stack_a, char **argv, int commas, int *err)
 		if (num == NULL)
 			return ;
 		*num = ft_atol(argv[i]);
-		// ft_printf("this is num: %p\n", num);
+		ft_printf("this is num: %d\n", *num);
 		if (is_int(argv[i]) == 0 || *num < -2147483648 || *num > 2147483647)
 		{
+			free(num);
 			*err = 1;
 			return ;
 		}

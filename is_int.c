@@ -7,6 +7,11 @@ int is_int(char *str)
   i = 0;
   while (str[i] != '\0')
   {
+		if (str[i] == '-' && i == 0)
+		{
+			i++;
+			continue;
+		}
     if (ft_isdigit(str[i]) == 0)
       return (0);
     i++;
