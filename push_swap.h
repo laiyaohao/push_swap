@@ -63,5 +63,9 @@ void	sort_stack(t_stack *stack_a, t_stack *stack_b);
 void	sort_two(t_stack *stack_a);
 void	sort_three(t_stack *stack_a);
 void	sort_four(t_stack *stack_a, t_stack *stack_b);
+long	find_smallest(t_stack *stack_a);
+void	push_small_to_b(t_stack *stack_a, t_stack *stack_b);
+void	sort_five(t_stack *stack_a, t_stack *stack_b);
+void radix_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif
