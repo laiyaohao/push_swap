@@ -12,5 +12,5 @@ void  pb(t_stack *stack_b, t_stack *stack_a)
   *a_top = *(long *)stack_a->top->content;
   pop(stack_a);
   push(stack_b, a_top);
-	ft_printf("pb\n");
+	// ft_printf("pb\n");
 }
