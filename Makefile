@@ -6,7 +6,7 @@
 #    By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/16 18:22:08 by ylai              #+#    #+#              #
-#    Updated: 2024/10/17 20:38:12 by ylai             ###   ########.fr        #
+#    Updated: 2024/10/17 22:41:39 by ylai             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC_FILE_NAMES := main free_stack init_stack is_empty is_int pa pb peek \
 									pop add_back push ra rb rr rra rrb rrr sa sb ss del_con \
 									push_nums free_argv print_stack sort_stack sort_two \
 									sort_three sort_four find_smallest push_small_to_b \
-									sort_five radix_sort push_neg
+									sort_five radix_sort push_neg radix_helper
 SRCS := ${addsuffix .c, ${SRC_FILE_NAMES}}
 OBJS := ${SRCS:.c=.o}
 

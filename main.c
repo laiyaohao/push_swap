@@ -25,10 +25,10 @@ int main(int argc, char **argv)
 		// ft_printf("no error\n");
 		// push_neg(&stack_a, &stack_b);
 		sort_stack(&stack_a, &stack_b);
-		ft_printf("stack a:\n");
-		print_stack(&stack_a);
-		ft_printf("\nstack b:\n");
-		print_stack(&stack_b);
+		// ft_printf("stack a:\n");
+		// print_stack(&stack_a);
+		// ft_printf("\nstack b:\n");
+		// print_stack(&stack_b);
 		// ft_printf("stack_a->size: %d\n", stack_a.size);
 		// ft_printf("stack_b->size: %d\n", stack_b.size);
 	}

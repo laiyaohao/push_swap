@@ -68,5 +68,6 @@ void	push_small_to_b(t_stack *stack_a, t_stack *stack_b);
 void	sort_five(t_stack *stack_a, t_stack *stack_b);
 void radix_sort(t_stack *stack_a, t_stack *stack_b);
 void	push_neg(t_stack *stack_a, t_stack *stack_b);
+void	radix_helper(t_stack *stack);
 
 #endif
