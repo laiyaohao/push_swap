@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void  rb(t_stack *stack_b, int print)
+void 	rb(t_stack *stack_b, int print)
 {
   long		*top_con;
 

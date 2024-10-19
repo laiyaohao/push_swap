@@ -18,6 +18,7 @@ void swap(long* xp, long* yp)
 	*xp = *yp;
 	*yp = temp;
 }
+
 void	sort_arr(long *arr, int size)
 {
 	int i;
@@ -31,15 +32,13 @@ void	sort_arr(long *arr, int size)
 		j = 0; 
 		while (j < size - i - 1)
 		{
-			if (arr[j] > arr[j + 1]) {
+			if (arr[j] > arr[j + 1])
+			{
 				swap(&arr[j], &arr[j + 1]);
 				swapped = 1;
 			}
 			j++;
 		}
-
-		// If no two elements were swapped by inner loop,
-		// then break
 		if (swapped == 0)
 			break;
 		i++;
@@ -68,8 +67,6 @@ void	change(long *arr, t_stack *stack)
 		}
 		free(node->content);
 		node->content = num;
-		// node->content = &j;
-		// ft_printf("j: %d\n", j);
 		node = node->next;
 		i++;
 	}
@@ -92,7 +89,6 @@ void	radix_helper(t_stack *stack)
 		node = node->next;
 	}
 	sort_arr(arr, stack->size);
-	// print_arr(arr, stack->size);
 	change(arr, stack);
 	free(arr);
 }

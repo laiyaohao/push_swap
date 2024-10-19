@@ -6,7 +6,7 @@ The first element becomes the last one.
  */
 void  ra(t_stack *stack_a, int print)
 {
-	long		*top_con;
+	long	*top_con;
 
 	if (is_empty(stack_a) || stack_a->top->next == NULL)
 		return ;

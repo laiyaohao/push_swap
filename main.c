@@ -10,30 +10,23 @@ int main(int argc, char **argv)
 
 	commas = 0;
 	error = 0;
-	if (argc < 2 || (argc == 2 && argv[1][0] == '\0'))
-		return (1);
+	if (argc < 2)
+		return (0);
 	else if (argc == 2)
 	{
-		argv = ft_split(argv[1], ' ');
-		commas = 1;
+		if (argv[1][0] != '\0')
+		{
+			argv = ft_split(argv[1], ' ');
+			commas = 1;
+		}
+		else
+			error = 1;
 	}
 	init_stack(&stack_a);
 	init_stack(&stack_b);
 	push_nums(&stack_a, argv, commas, &error);
 	if (!error)
-	{
-		// ft_printf("no error\n");
-		// push_neg(&stack_a, &stack_b);
 		sort_stack(&stack_a, &stack_b);
-		// ft_printf("stack a:\n");
-		// print_stack(&stack_a);
-		// ft_printf("\nstack b:\n");
-		// print_stack(&stack_b);
-		// ft_printf("stack_a->size: %d\n", stack_a.size);
-		// ft_printf("stack_b->size: %d\n", stack_b.size);
-	}
-	// pop(&stack_a);
-	// ft_printf("stack_a size: %d\n", stack_a.size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	if (commas)
@@ -42,50 +35,3 @@ int main(int argc, char **argv)
 		ft_printf("Error\n");
 	return (0);
 }
-
-// int main(void)
-// {
-// 	t_stack stack_a;
-// 	t_stack	stack_b;
-// 	init_stack(&stack_a);
-// 	init_stack(&stack_b);
-
-// 	int aa = 3;
-// 	int ba = 2;
-// 	int cb = 1;
-// 	int db = 5;
-// 	aa = 6;
-
-// 	push(&stack_a, &aa);
-// 	push(&stack_a, &ba);
-// 	push(&stack_b, &cb);
-// 	push(&stack_b, &db);
-
-// 	// printf("before adding ele frm b, Top of Stack A: %d\n", *(int *)peek(&stack_a));
-// 	// printf("before pop top ele in b to a, top of b: %d\n", *(int *)peek(&stack_b));
-// 	// pop(&stack_a);
-// 	// printf("after pop, Top of Stack A: %d\n", *(int *)peek(&stack_a));
-// 	// push(&stack_a, &d);
-// 	// printf("after pushing, Top of Stack A: %d\n", *(int *)peek(&stack_a));
-// 	// pa(&stack_a, &stack_b);
-// 	// printf("\n\n");
-// 	// rra(&stack_a);
-// 	// printf("after pa, top of the stack a: %d\n", *(int *)peek(&stack_a));
-// 	// pop(&stack_a);
-// 	// printf("after pa, Top of Stack b: %d\n", *(int *)peek(&stack_b));
-// 	print_stack(&stack_a);
-
-// 	free_stack(&stack_a);
-// 	free_stack(&stack_b);
-// }
-
-// int main(int argc, char **argv)
-// {
-// 	if (argc != 2)
-// 		return 0;
-// 	long test0 = ft_atol(argv[1]);
-// 	long test1 = atol(argv[1]);
-// 	printf("test0: %ld\n", test0);
-// 	printf("test1: %ld\n", test1);
-// 	return 0;
-// }

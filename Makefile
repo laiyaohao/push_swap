@@ -18,10 +18,10 @@ LIBFT := ${LIBFT_DIR}/libft.a
 FT_PRINTF_DIR := ft_printf
 FT_PRINTF := ${FT_PRINTF_DIR}/libftprintf.a
 SRC_FILE_NAMES := main free_stack init_stack is_empty is_int pa pb peek \
-									pop add_back push ra rb rr rra rrb rrr sa sb ss del_con \
+									pop add_back push ra rb rr rra rrb rrr sa sb ss \
 									push_nums free_argv print_stack sort_stack sort_two \
 									sort_three sort_four find_smallest push_small_to_b \
-									sort_five radix_sort push_neg radix_helper
+									sort_five radix_sort radix_helper
 SRCS := ${addsuffix .c, ${SRC_FILE_NAMES}}
 OBJS := ${SRCS:.c=.o}
 

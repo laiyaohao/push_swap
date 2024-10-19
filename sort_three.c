@@ -14,14 +14,14 @@ void	sort_three(t_stack *stack_a)
 		sa(stack_a, 1);
 		rra(stack_a, 1);
   }
-	else if (top > mid && top > bottom && mid < bottom)// Case: [3, 1, 2]
+	else if (top > mid && top > bottom && mid < bottom)
 		ra(stack_a, 1);
-	else if (top > mid && mid < bottom && top < bottom)// Case: [2, 1, 3]
+	else if (top > mid && mid < bottom && top < bottom)
 		sa(stack_a, 1);
-	else if (top < mid && mid > bottom && top > bottom)// Case: [2, 3, 1]
+	else if (top < mid && mid > bottom && top > bottom)
 		rra(stack_a, 1);
 	else if (top < mid && mid > bottom && top < bottom)
-	{ // Case: [1, 3, 2]
+	{
 		sa(stack_a, 1);
 		ra(stack_a, 1);
 	}

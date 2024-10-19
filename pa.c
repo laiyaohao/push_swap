@@ -1,8 +1,8 @@
 #include "push_swap.h"
 
-void  pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack *stack_a, t_stack *stack_b)
 {
-	long  *b_top;
+	long	*b_top;
 
 	if (is_empty(stack_b))
 		return;

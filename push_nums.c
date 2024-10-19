@@ -30,14 +30,12 @@ void	push_nums(t_stack *stack_a, char **argv, int commas, int *err)
 	i = 1;
 	if (commas)
 		i = 0;
-	while (argv[i])
+	while (argv != NULL && argv[i])
 	{
-		// ft_printf("this is argv[%d]: %s\n", i, argv[i]);
 		num = (long *) malloc(sizeof(long));
 		if (num == NULL)
 			return ;
 		*num = ft_atol(argv[i]);
-		// ft_printf("this is num: %d\n", *num);
 		if (is_int(argv[i]) == 0 || *num < -2147483648 || *num > 2147483647 || not_unique(num, stack_a))
 		{
 			free(num);
@@ -45,7 +43,6 @@ void	push_nums(t_stack *stack_a, char **argv, int commas, int *err)
 			return ;
 		}
 		add_back(stack_a, num);
-		// ft_printf("i: %d\n", i);
 		i++;
 	}
 }
