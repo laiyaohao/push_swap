@@ -10,7 +10,7 @@ void	sort_three(t_stack *stack_a)
 	mid = *(long *)stack_a->top->next->content;
 	bottom = *(long *)stack_a->top->next->next->content;
 	if (top > mid && mid > bottom)
-	{  // Case: [3, 2, 1] -> fully reversed
+	{
 		sa(stack_a, 1);
 		rra(stack_a, 1);
   }

@@ -1,14 +1,17 @@
 #include "push_swap.h"
 
-void	free_argv(char **argv)
+void	free_argv(char **argv, int commas)
 {
 	int	i;
 
 	i = 0;
-	while (argv[i])
+	if (commas)
 	{
-		free(argv[i]);
-		i++;
+		while (argv[i])
+		{
+			free(argv[i]);
+			i++;
+		}
+		free(argv);
 	}
-	free(argv);
 }

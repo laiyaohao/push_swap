@@ -1,7 +1,22 @@
 #include "push_swap.h"
 #include <stdlib.h>
 #include <stdio.h>
-int main(int argc, char **argv)
+
+void	print_error(int error)
+{
+	if (error)
+	{
+		ft_printf("Error\n");
+	}
+}
+
+void	free_stack_argv(t_stack *a, t_stack *b, char **av, int co)
+{
+	free_stack(a, b);
+	free_argv(av, co);
+}
+
+int	main(int argc, char **argv)
 {
 	t_stack	stack_a;
 	t_stack	stack_b;
@@ -22,16 +37,10 @@ int main(int argc, char **argv)
 		else
 			error = 1;
 	}
-	init_stack(&stack_a);
-	init_stack(&stack_b);
+	init_stack(&stack_a, &stack_b);
 	push_nums(&stack_a, argv, commas, &error);
-	if (!error)
-		sort_stack(&stack_a, &stack_b);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
-	if (commas)
-		free_argv(argv);
-	if (error)
-		ft_printf("Error\n");
+	sort_stack(&stack_a, &stack_b, error);
+	free_stack_argv(&stack_a, &stack_b, argv, commas);
+	print_error(error);
 	return (0);
 }
