@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:50:37 by ylai              #+#    #+#             */
-/*   Updated: 2024/06/02 19:33:23 by ylai             ###   ########.fr       */
+/*   Updated: 2024/10/21 17:48:56 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 */
 long	ft_atol(const char *nptr)
 {
-	long  i;
+	long	i;
 	long	ans;
 	long	sign;
 

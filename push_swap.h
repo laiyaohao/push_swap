@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/21 17:23:43 by ylai              #+#    #+#             */
+/*   Updated: 2024/10/21 17:42:35 by ylai             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -23,7 +35,7 @@ typedef struct s_list
 typedef struct s_stack
 {
 	t_list	*top;
-	int			size;
+	int		size;
 }					t_stack;
 
 long	ft_atol(const char *nptr);
@@ -38,25 +50,25 @@ t_list	*ft_lstlast(t_list *lst);
 int		ft_printf(const char *str, ...);
 void	init_stack(t_stack *stack_a, t_stack *stack_b);
 void	push_nums(t_stack *stack_a, char **argv, int commas, int *err);
-int is_int(char *str);
-void  print_stack(t_stack *stack);
-void  free_stack(t_stack *stack_a, t_stack *stack_b);
+int		is_int(char *str);
+void	print_stack(t_stack *stack);
+void	free_stack(t_stack *stack_a, t_stack *stack_b);
 void	free_argv(char **argv, int commas);
 void	add_back(t_stack *stack, void *num);
 void	push(t_stack *stack, void *num);
 int		is_empty(t_stack *stack);
 void	pop(t_stack *stack);
 void	*peek(t_stack *stack);
-void  pa(t_stack *stack_a, t_stack *stack_b);
-void  pb(t_stack *stack_b, t_stack *stack_a);
-void  ra(t_stack *stack_a, int print);
-void  rb(t_stack *stack_b, int print);
-void  rr(t_stack *stack_a, t_stack *stack_b);
-void  rra(t_stack *stack_a, int print);
-void  rrb(t_stack *stack_b, int print);
-void  rrr(t_stack *stack_a, t_stack *stack_b);
-void  sa(t_stack *stack_a, int print);
-void  sb(t_stack *stack_b, int print);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_b, t_stack *stack_a);
+void	ra(t_stack *stack_a, int print);
+void	rb(t_stack *stack_b, int print);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+void	rra(t_stack *stack_a, int print);
+void	rrb(t_stack *stack_b, int print);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
+void	sa(t_stack *stack_a, int print);
+void	sb(t_stack *stack_b, int print);
 void	ss(t_stack *stack_a, t_stack *stack_b);
 void	sort_stack(t_stack *stack_a, t_stack *stack_b, int error);
 void	sort_two(t_stack *stack_a);
@@ -67,6 +79,5 @@ void	push_small_to_b(t_stack *stack_a, t_stack *stack_b);
 void	sort_five(t_stack *stack_a, t_stack *stack_b);
 void	radix_sort(t_stack *stack_a, t_stack *stack_b);
 void	radix_helper(t_stack *stack);
-// void  argc_two(char **argv2, int *comma, int *err, char **argv);
 
 #endif

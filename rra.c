@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rra.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/21 17:05:30 by ylai              #+#    #+#             */
+/*   Updated: 2024/10/21 17:05:33 by ylai             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 /**
@@ -8,7 +20,7 @@ void	rra(t_stack *stack_a, int print)
 {
 	t_list	*og_last;
 	t_list	*sec_last;
-	long		*last_con;
+	long	*last_con;
 
 	if (is_empty(stack_a) || stack_a->top->next == NULL)
 		return ;

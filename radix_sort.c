@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 19:57:42 by ylai              #+#    #+#             */
-/*   Updated: 2024/10/17 23:43:21 by ylai             ###   ########.fr       */
+/*   Updated: 2024/10/21 17:28:22 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ int	find_max_bit(long max_num)
 	return (max_bits);
 }
 
-void	radix_inner_sort(int max_bits, t_stack *stack_a, t_stack *stack_b, int size)
+void	radix_inner_sort(int max_bits, t_stack *stack_a, t_stack *stack_b,
+											int size)
 {
-	int	i;
-	t_list *node;
-	int	j;
-	long num;
+	int		i;
+	t_list	*node;
+	int		j;
+	long	num;
 
 	i = 0;
 	while (i < max_bits)
@@ -66,7 +67,7 @@ void	radix_inner_sort(int max_bits, t_stack *stack_a, t_stack *stack_b, int size
 	}
 }
 
-void radix_sort(t_stack *stack_a, t_stack *stack_b)
+void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	long	max_num;
 	int		max_bits;

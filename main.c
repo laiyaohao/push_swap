@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/21 17:16:19 by ylai              #+#    #+#             */
+/*   Updated: 2024/10/21 17:24:57 by ylai             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -20,8 +32,8 @@ int	main(int argc, char **argv)
 {
 	t_stack	stack_a;
 	t_stack	stack_b;
-	int	commas;
-	int	error;
+	int		commas;
+	int		error;
 
 	commas = 0;
 	error = 0;

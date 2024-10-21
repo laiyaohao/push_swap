@@ -1,20 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   is_int.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/21 17:07:17 by ylai              #+#    #+#             */
+/*   Updated: 2024/10/21 17:47:24 by ylai             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int is_int(char *str)
+int	is_int(char *str)
 {
-  int i;
+	int	i;
 
-  i = 0;
-  while (str[i] != '\0')
-  {
+	i = 0;
+	while (str[i] != '\0')
+	{
 		if (str[i] == '-' && i == 0)
 		{
 			i++;
-			continue;
+			continue ;
 		}
-    if (ft_isdigit(str[i]) == 0)
-      return (0);
-    i++;
-  }
-  return (1);
+		if (ft_isdigit(str[i]) == 0)
+			return (0);
+		i++;
+	}
+	return (1);
 }
