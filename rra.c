@@ -6,16 +6,12 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:05:30 by ylai              #+#    #+#             */
-/*   Updated: 2024/10/21 17:05:33 by ylai             ###   ########.fr       */
+/*   Updated: 2024/10/21 18:10:02 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/**
- * Shift down all elements of stack a by 1.
-The last element becomes the first one
- */
 void	rra(t_stack *stack_a, int print)
 {
 	t_list	*og_last;

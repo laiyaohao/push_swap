@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:23:43 by ylai              #+#    #+#             */
-/*   Updated: 2024/10/21 17:42:35 by ylai             ###   ########.fr       */
+/*   Updated: 2024/10/21 18:08:35 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <fcntl.h>
-# include <sys/wait.h>
-# include <sys/types.h>
-# include <errno.h>
-# include <string.h>
-# include <limits.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
 
 typedef struct s_list
 {

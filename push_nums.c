@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:07:37 by ylai              #+#    #+#             */
-/*   Updated: 2024/10/21 17:21:34 by ylai             ###   ########.fr       */
+/*   Updated: 2024/10/21 18:09:31 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,6 @@ int	not_unique(long *num, t_stack *stack)
 	return (0);
 }
 
-/**
- * commas indicate whether arguments come in inverted commas
- * i.e. ./push_swap "10 2 -39"
- * 1 indicate yes
- * 0 indicate no, i.e ./push_swap 10 2 -39
- * if yes, need to free argv, because it is defined
- * using ft_split
- */
 void	push_nums(t_stack *stack_a, char **argv, int commas, int *err)
 {
 	int		i;
