@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:07:05 by ylai              #+#    #+#             */
-/*   Updated: 2024/10/21 17:07:06 by ylai             ###   ########.fr       */
+/*   Updated: 2024/10/22 22:09:16 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	find_smallest(t_stack *stack_a)
 	smallest = *(long *)stack_a->top->content;
 	node = stack_a->top;
 	i = 0;
+	index = 0;
 	while (node != NULL)
 	{
 		if (*(long *)node->content < smallest)

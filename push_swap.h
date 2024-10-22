@@ -6,7 +6,7 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:23:43 by ylai              #+#    #+#             */
-/*   Updated: 2024/10/21 18:08:35 by ylai             ###   ########.fr       */
+/*   Updated: 2024/10/22 20:45:08 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 t_list	*ft_lstlast(t_list *lst);
 int		ft_printf(const char *str, ...);
 void	init_stack(t_stack *stack_a, t_stack *stack_b);
-void	push_nums(t_stack *stack_a, char **argv, int commas, int *err);
+void	push_nums(t_stack *stack_a, char ***argv, int *err);
 int		is_int(char *str);
 void	print_stack(t_stack *stack);
 void	free_stack(t_stack *stack_a, t_stack *stack_b);
-void	free_argv(char **argv, int commas);
+void	free_argv(char ***argv);
 void	add_back(t_stack *stack, void *num);
 void	push(t_stack *stack, void *num);
 int		is_empty(t_stack *stack);

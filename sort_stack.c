@@ -6,15 +6,29 @@
 /*   By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:04:04 by ylai              #+#    #+#             */
-/*   Updated: 2024/10/21 17:04:05 by ylai             ###   ########.fr       */
+/*   Updated: 2024/10/22 22:21:03 by ylai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	not_ascending(t_stack *stack_a)
+{
+	t_list	*node;
+
+	node = stack_a->top;
+	while (node->next != NULL)
+	{
+		if (*(long *)node->content > *(long *)node->next->content)
+			return (1);
+		node = node->next;
+	}
+	return (0);
+}
+
 void	sort_stack(t_stack *stack_a, t_stack *stack_b, int error)
 {
-	if (!error)
+	if (!error && not_ascending(stack_a))
 	{
 		if (stack_a->size == 2)
 			sort_two(stack_a);
