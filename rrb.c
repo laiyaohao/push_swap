@@ -33,6 +33,7 @@ void	rrb(t_stack *stack_b, int print)
 	*last_con = *(long *)og_last->content;
 	ft_lstdelone(og_last, free);
 	stack_b->size = stack_b->size - 1;
+	stack_b->size--;
 	push(stack_b, last_con);
 	if (print)
 		ft_printf("rrb\n");

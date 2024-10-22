@@ -32,6 +32,7 @@ void	rra(t_stack *stack_a, int print)
 		return ;
 	*last_con = *(long *)og_last->content;
 	ft_lstdelone(og_last, free);
+	stack_a->size--;
 	push(stack_a, last_con);
 	if (print)
 		ft_printf("rra\n");

@@ -14,15 +14,24 @@
 
 void	push_small_to_b(t_stack *stack_a, t_stack *stack_b)
 {
-	long	smallest;
-	t_list	*node;
+	int		small_i;
 
-	smallest = find_smallest(stack_a);
-	node = stack_a->top;
-	while (*(long *)node->content != smallest)
+	small_i = find_smallest(stack_a);
+	if (small_i > (stack_a->size / 2))
 	{
-		node = node->next;
-		ra(stack_a, 1);
+		while (small_i < stack_a->size)
+		{
+			rra(stack_a, 1);
+			small_i++;
+		}
+	}
+	else
+	{
+		while (small_i != 0)
+		{
+			ra(stack_a, 1);
+			small_i--;
+		}
 	}
 	pb(stack_b, stack_a);
 }
