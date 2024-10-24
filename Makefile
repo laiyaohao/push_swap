@@ -6,13 +6,13 @@
 #    By: ylai <ylai@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/16 18:22:08 by ylai              #+#    #+#              #
-#    Updated: 2024/10/17 22:41:39 by ylai             ###   ########.fr        #
+#    Updated: 2024/10/24 19:37:43 by ylai             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
 CC := cc
-CFLAGS := -Wall -Werror -Wextra
+CFLAGS := -Wall -Werror -Wextra -g
 LIBFT_DIR := libft
 LIBFT := ${LIBFT_DIR}/libft.a
 FT_PRINTF_DIR := ft_printf
